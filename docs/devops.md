@@ -98,10 +98,23 @@ api.{project}[.36node].com/service/v0-uat
 api.{project}[.36node].com/service/v0-pre
 
 api.navinfo.com/some-service/v0
+api.pudongbus.36node.com/bus-core/v0
 ```
 
-我们把前端称为 app
+我们把前端称为 app, 以 life 和 bus project 为例
 
 ```sh
 admin.life.36node.com
+admin-uat.life.36node.com
+
+// 省略默认的app名称
+chongmingbus.36node.com
+admin.chongmingbus.36node.com
+
+
+// admin-uat 是 admin web 的 uat 版本
+admin-uat.pudongbus.36node.com
+
+screen.chongmingbus.36node.com
+screen-uat.chongmingbus.36node.com
 ```
