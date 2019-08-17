@@ -1,35 +1,17 @@
 import React from "react";
-import { connect } from "react-redux";
-import MediaQuery from "react-responsive";
-import { Button } from "antd";
 import DocumentTitle from "react-document-title";
+import { withRouter } from "react-router";
 
-import { logout } from "../actions";
+import { Container } from "../components/layout";
+import Title from "../components/title";
 
-import { Container, Jumbotron } from "../components/layout";
-
-@connect(state => ({}))
+@withRouter
 export default class extends React.PureComponent {
-  handleLogout = () => {
-    this.props.dispatch(logout());
-  };
-
   render() {
     return (
-      <DocumentTitle title="@36node - Template React Redux">
+      <DocumentTitle title="Adventure - 首页">
         <Container>
-          <MediaQuery minDeviceWidth={800}>
-            <Jumbotron> Welcome to 36node Sketch! </Jumbotron>
-          </MediaQuery>
-          <MediaQuery maxDeviceWidth={800}>
-            <Jumbotron> Welcome </Jumbotron>
-          </MediaQuery>
-          <p>
-            {" "}
-            We are the core team of
-            <a href="https://www.adventurer.tech"> Adventurer Tech Company. </a>
-          </p>
-          <Button onClick={this.handleLogout}> Try Logout </Button>
+          <Title title="我们是冒险者" eng="We are Adventure" />
         </Container>
       </DocumentTitle>
     );
