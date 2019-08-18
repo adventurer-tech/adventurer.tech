@@ -1,5 +1,44 @@
 html,
 body {
   min-height: 100vh;
-  background: #f0f2f5;
+  color: #212529;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*
+** reset style
+*/
+
+h1 {
+  letter-spacing: 0.25vw;
+  font-size: 2.6vw;
+  font-weight: 400;
+}
+
+p {
+  font-size: 0.94vw;
+  line-height: 1.77vw;
+  letter-spacing: 0.1vw;
+}
+
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 24px;
+    letter-spacing: normal;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: normal;
+  }
 }
