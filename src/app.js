@@ -12,7 +12,7 @@ import Opinion from "./containers/opinion";
 import Service from "./containers/service";
 import { Layout } from "antd";
 
-import { Footer, Header } from "./components/layout";
+import { Footer, Header, Content } from "./components/layout";
 
 class App extends Component {
   render() {
@@ -20,15 +20,16 @@ class App extends Component {
       <Router history={history}>
         <Layout>
           <Header />
-          <Switch>
-            <Route path="/about" component={About} />
-            <Route path="/cases" component={Cases} />
-            <Route path="/join" component={Join} />
-            <Route path="/opinion" component={Opinion} />
-            <Route path="/service" component={Service} />
-            <Route path="/" component={Home} />
-          </Switch>
-
+          <Content>
+            <Switch>
+              <Route path="/about" component={About} />
+              <Route path="/cases" component={Cases} />
+              <Route path="/join" component={Join} />
+              <Route path="/opinion" component={Opinion} />
+              <Route path="/service" component={Service} />
+              <Route path="/" component={Home} />
+            </Switch>
+          </Content>
           <Footer />
         </Layout>
       </Router>
