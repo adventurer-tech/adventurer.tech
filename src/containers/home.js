@@ -51,18 +51,21 @@ export default class extends React.PureComponent {
                 <Card
                   width="30%"
                   icon="/images/icon1.png"
+                  iconWidth={72}
                   title="高性能高并发"
                   info="支持千万以上级设备接入，支持 20 万以上的设备并发数据。"
                 />
                 <Card
                   width="30%"
                   icon="/images/icon2.png"
+                  iconWidth={72}
                   title="实时监控"
                   info="实时数据毫秒级响应，让企业对业务状况了如指掌。"
                 />
                 <Card
                   width="30%"
                   icon="/images/icon3.png"
+                  iconWidth={72}
                   title="海量数据分析能力"
                   info="TB级数据秒级响应，专业多维度下钻数据分析。"
                 />
@@ -107,6 +110,7 @@ export default class extends React.PureComponent {
                   width="30%"
                   icon="/images/icon4.png"
                   hoverIcon="/images/icon4-hover.png"
+                  iconWidth={108}
                   title="敏捷开发"
                   info="小步快跑、快速迭代，适应企业瞬息万变的业务需求。"
                 />
@@ -114,12 +118,14 @@ export default class extends React.PureComponent {
                   width="30%"
                   icon="/images/icon5.png"
                   hoverIcon="/images/icon5-hover.png"
+                  iconWidth={108}
                   title="微服务架构"
                   info="通过组件化、弹性的架构设计，帮助企业成功应对错综复杂的竞争挑战。"
                 />
                 <Card
                   width="30%"
                   icon="/images/icon6.png"
+                  iconWidth={108}
                   hoverIcon="/images/icon6-hover.png"
                   title="持续交付"
                   info="自动化部署、弹性设计的云服务器环境，让您的应用时刻保持最新活力。"
@@ -165,25 +171,88 @@ export default class extends React.PureComponent {
               <Title title="客户和合作伙伴" eng="Partners" engColor="#f2f4ff" />
               <div className="partner-container">
                 <div>
-                  <img src="/images/partner1.png" alt="" />
+                  <img
+                    src="/images/partner1.png"
+                    className="partner-icon"
+                    alt=""
+                  />
+                  <img
+                    src="/images/partner1-hover.png"
+                    className="partner-hover"
+                    alt=""
+                  />
                 </div>
                 <div>
-                  <img src="/images/partner2.png" alt="" />
+                  <img
+                    src="/images/partner2.png"
+                    className="partner-icon"
+                    alt=""
+                  />
+                  <img
+                    src="/images/partner2-hover.png"
+                    className="partner-hover"
+                    alt=""
+                  />
                 </div>
                 <div>
-                  <img src="/images/partner3.png" alt="" />
+                  <img
+                    src="/images/partner3.png"
+                    className="partner-icon"
+                    alt=""
+                  />
+                  <img
+                    src="/images/partner3-hover.png"
+                    className="partner-hover"
+                    alt=""
+                  />
                 </div>
                 <div>
-                  <img src="/images/partner4.png" alt="" />
+                  <img
+                    src="/images/partner4.png"
+                    className="partner-icon"
+                    alt=""
+                  />
+                  <img
+                    src="/images/partner4-hover.png"
+                    className="partner-hover"
+                    alt=""
+                  />
                 </div>
                 <div>
-                  <img src="/images/partner5.png" alt="" />
+                  <img
+                    src="/images/partner5.png"
+                    className="partner-icon"
+                    alt=""
+                  />
+                  <img
+                    src="/images/partner5-hover.png"
+                    className="partner-hover"
+                    alt=""
+                  />
                 </div>
                 <div>
-                  <img src="/images/partner6.png" alt="" />
+                  <img
+                    src="/images/partner6.png"
+                    className="partner-icon"
+                    alt=""
+                  />
+                  <img
+                    src="/images/partner6-hover.png"
+                    className="partner-hover"
+                    alt=""
+                  />
                 </div>
                 <div>
-                  <img src="/images/partner7.png" alt="" />
+                  <img
+                    src="/images/partner7.png"
+                    className="partner-icon"
+                    alt=""
+                  />
+                  <img
+                    src="/images/partner7-hover.png"
+                    className="partner-hover"
+                    alt=""
+                  />
                 </div>
               </div>
             </LargeContainer>
@@ -288,6 +357,7 @@ const WhatCanWeDo = styled.div`
   ${Container} {
     > p {
       color: #6b6d7f;
+      font-size: 16px;
       line-height: 32px;
       text-align: center;
     }
@@ -308,14 +378,14 @@ const WhatCanWeDo = styled.div`
         text-align: center;
 
         h3 {
-          font-size: 16px;
+          font-size: 18px;
+          font-weight: 500;
           color: #323854;
           margin-bottom: 20px;
         }
 
         p {
           color: #9ea6b4;
-          font-size: 13px;
           line-height: 24px;
           max-width: 70%;
           margin: 0 auto;
@@ -367,6 +437,7 @@ const HowDidWeDo = styled.div`
     > p {
       color: white;
       line-height: 32px;
+      font-size: 16px;
       text-align: center;
       max-width: 80%;
       margin: 0 auto;
@@ -432,9 +503,27 @@ const Partner = styled.div`
         width: 25%;
 
         img {
+          margin: 0 auto;
+          width: 250px;
+          max-width: 100%;
+        }
+
+        .partner-icon {
           display: block;
-          height: 38px;
-          margin: 25px auto;
+        }
+
+        .partner-hover {
+          display: none;
+        }
+
+        &:hover {
+          .partner-icon {
+            display: none;
+          }
+
+          .partner-hover {
+            display: block;
+          }
         }
       }
     }
@@ -450,8 +539,12 @@ const Partner = styled.div`
         > div {
           width: 50%;
 
-          img {
-            height: 32px;
+          .partner-icon {
+            display: none;
+          }
+
+          .partner-hover {
+            display: block;
           }
         }
       }

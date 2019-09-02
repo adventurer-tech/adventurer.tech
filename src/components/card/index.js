@@ -13,31 +13,25 @@ const Main = styled.div`
   &:hover {
     box-shadow: 0px 11px 45px 0px rgba(92, 105, 127, 0.25);
 
-    .icon-hover {
-      display: block;
-    }
-
-    .icon {
-      display: ${props => props.hoverIcon && "none"};
+    .icon-container {
+      background-image: ${props =>
+        props.hoverIcon ? `url(${props.hoverIcon})` : `url(${props.icon})`};
     }
   }
 
-  img {
-    display: block;
-    margin: 0 auto;
-    width: ${props => props.iconWidth || "auto"};
-  }
-  .icon-hover {
-    display: none;
+  .icon-container {
+    height: ${props => (props.iconWidth ? props.iconWidth + "px" : "auto")};
+    background: url(${props => props.icon}) no-repeat;
+    background-position: center center;
   }
 
   .title {
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 500;
     margin: 30px 0;
   }
   .info {
     color: #9ea6b4;
-    font-size: 13px;
     line-height: 24px;
   }
 
@@ -60,11 +54,15 @@ export default class Card extends React.PureComponent {
   render() {
     const { icon, title, info, iconWidth, hoverIcon, width } = this.props;
     return (
-      <Main iconWidth={iconWidth} hoverIcon={hoverIcon} width={width}>
+      <Main
+        iconWidth={iconWidth}
+        icon={icon}
+        hoverIcon={hoverIcon}
+        width={width}
+      >
         <Fade bottom delay={100}>
-          <img src={icon} className="icon" alt="" />
+          <div className="icon-container" />
         </Fade>
-        {hoverIcon && <img src={hoverIcon} className="icon-hover" alt="" />}
         <Fade bottom delay={200}>
           <div className="title">{title}</div>
         </Fade>
@@ -81,6 +79,6 @@ Card.propTypes = {
   icon: PropTypes.string,
   title: PropTypes.string,
   info: PropTypes.string,
-  iconWidth: PropTypes.string,
+  iconWidth: PropTypes.number,
   hoverIcon: PropTypes.string,
 };

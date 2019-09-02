@@ -10,6 +10,11 @@ const Header = styled.div`
   height: 68px;
   line-height: 68px;
   background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  box-shadow: 0 2px 3px #f0f1f2;
 
   ${LargeContainer} {
     display: flex;

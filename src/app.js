@@ -20,7 +20,7 @@ class App extends Component {
       <Router history={history}>
         <Layout>
           <Header />
-          <Content>
+          <Content style={{ paddingTop: 68 }}>
             <Switch>
               <Route path="/about" component={About} />
               <Route path="/cases" component={Cases} />
