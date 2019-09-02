@@ -114,6 +114,9 @@ export default class AdventureFooter extends React.PureComponent {
             </Logo>
             <WrapMenu mode="horizontal">
               <WrapMenu.Item>
+                <NavLink to="/">首页</NavLink>
+              </WrapMenu.Item>
+              <WrapMenu.Item>
                 <NavLink to="/service">服务</NavLink>
               </WrapMenu.Item>
               <WrapMenu.Item>

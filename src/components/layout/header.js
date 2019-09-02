@@ -23,8 +23,13 @@ const Header = styled.div`
   }
 
   .ant-menu-item {
-    line-height: 66px;
+    line-height: 68px;
     padding: 0 25px;
+    border: none !important;
+
+    &:hover {
+      border: none !important;
+    }
   }
 
   .menu {
@@ -114,6 +119,9 @@ export default class AdventureHeader extends React.PureComponent {
   renderMenu = mode => {
     return (
       <WrapMenu mode={mode}>
+        <WrapMenu.Item>
+          <NavLink to="/">首页</NavLink>
+        </WrapMenu.Item>
         <WrapMenu.Item>
           <NavLink to="/service">服务</NavLink>
         </WrapMenu.Item>
