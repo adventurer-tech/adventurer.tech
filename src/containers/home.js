@@ -42,9 +42,7 @@ export default class extends React.PureComponent {
             <Container>
               <Title title="我们所擅长的" eng="What can we do?" />
               <p>
-                我们为客户定制化开发企业级的软件系统。通过我们在车辆网、物联网和BI大数据领域积累的丰富实践经验，不断为企业
-                <br />
-                创造新的价值，帮助企业在新的竞争环境下如虎添翼、获得成功。
+                我们为客户定制化开发企业级的软件系统。通过我们在车辆网、物联网和BI大数据领域积累的丰富实践经验，不断为企业创造新的价值，帮助企业在新的竞争环境下如虎添翼、获得成功。
               </p>
               <ShapeTitle title="车辆和物联网行业解决方案" />
               <div className="card-container">
@@ -360,6 +358,8 @@ const WhatCanWeDo = styled.div`
       font-size: 16px;
       line-height: 32px;
       text-align: center;
+      max-width: 80%;
+      margin: 0 auto;
     }
 
     .card-container {
@@ -398,6 +398,10 @@ const WhatCanWeDo = styled.div`
     margin-bottom: 30px;
 
     ${Container} {
+      > p {
+        max-width: 90%;
+      }
+
       .card-container,
       .service-container {
         flex-direction: column;
