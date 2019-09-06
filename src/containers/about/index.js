@@ -9,11 +9,13 @@ import Title from "../../components/title";
 import Button from "../../components/button";
 import Card from "../../components/card";
 
+import { TITLE } from "../../config";
+
 @withRouter
 export default class extends React.PureComponent {
   render() {
     return (
-      <DocumentTitle title="Adventure - 关于我们">
+      <DocumentTitle title={`关于我们 - ${TITLE}`}>
         <About>
           <Banner>
             <Container>
@@ -33,7 +35,9 @@ export default class extends React.PureComponent {
               <p>
                 我们擅长构建定制化系统和定制化产品，和客户一起完成极其复杂的项目和软件。提供定制化软件是我们一切工作的核心，我们帮助客户尽可能快速地将概念转化为价值，交付给最终用户。我们的业务涵盖复杂且具备创新性的软件产品以及企业级系统应用，包含从产品概念设计、经由体验设计、敏捷交付、部署直至产品生命周期演进的所有服务。
               </p>
-              <Button title="加入我们" type="main" />
+              <NavLink to="/join">
+                <Button title="加入我们" type="main" />
+              </NavLink>
             </Container>
           </Team>
           <Culture>
@@ -74,7 +78,7 @@ export default class extends React.PureComponent {
           </Culture>
           <Member>
             <LargeContainer>
-              <Title title="和核心成员" eng="Members" engColor="#f2f4ff" />
+              <Title title="核心成员" eng="Members" engColor="#f2f4ff" />
               <div className="member-container">
                 <Card
                   width="22%"
@@ -199,6 +203,7 @@ const Banner = styled.div`
 
 const Team = styled.div`
   padding: 40px 0 80px 0;
+  text-align: center;
 
   img {
     display: block;
@@ -209,7 +214,6 @@ const Team = styled.div`
   p {
     max-width: 90%;
     margin: 0 auto 20px auto;
-    text-align: center;
     font-size: 16px;
     line-height: 28px;
   }

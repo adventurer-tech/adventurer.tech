@@ -2,11 +2,12 @@ import React from "react";
 import DocumentTitle from "react-document-title";
 import styled from "styled-components";
 import { withRouter } from "react-router";
-import { Form, Input } from "antd";
+import { Form, Input, message } from "antd";
 
 import { Container } from "../../components/layout";
 import Title from "../../components/title";
 import Button from "../../components/button";
+import { TITLE } from "../../config";
 
 const { TextArea } = Input;
 
@@ -17,7 +18,26 @@ export default class extends React.PureComponent {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
+        const data = {
+          msgtype: "markdown",
+          markdown: {
+            content: `官网用户联系我们通知\n 姓名:<font color="comment">${
+              values.name
+            }</font> \n\n 邮箱:<font color="comment">${
+              values.email
+            }</font> \n\n 电话:<font color="comment">${
+              values.phone
+            }</font> \n\n 需求:<font color="comment">${values.desc}</font>`,
+          },
+        };
+        fetch(
+          "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4e1d411d-0dda-4172-981f-054593654605",
+          {
+            body: JSON.stringify(data),
+            method: "POST",
+          }
+        );
+        message.success("提交成功，我们的工作人员稍后会联系您");
       }
     });
   };
@@ -26,7 +46,7 @@ export default class extends React.PureComponent {
     const { getFieldDecorator } = this.props.form;
 
     return (
-      <DocumentTitle title="Adventure - 联系我们">
+      <DocumentTitle title={`联系我们 - ${TITLE}`}>
         <Contact>
           <Banner>
             <Container>
@@ -55,7 +75,7 @@ export default class extends React.PureComponent {
                           message: "请输入姓名",
                         },
                       ],
-                    })(<Input placeholder="请输入姓名" />)}
+                    })(<Input placeholder="请输入您的姓名" />)}
                   </Form.Item>
                   <Form.Item label="您的邮箱">
                     {getFieldDecorator("email", {
@@ -65,7 +85,7 @@ export default class extends React.PureComponent {
                           message: "请输入邮箱",
                         },
                       ],
-                    })(<Input placeholder="请输入邮箱" />)}
+                    })(<Input placeholder="请输入您的邮箱" />)}
                   </Form.Item>
                   <Form.Item label="您的电话">
                     {getFieldDecorator("phone", {
@@ -75,14 +95,18 @@ export default class extends React.PureComponent {
                           message: "请输入电话",
                         },
                       ],
-                    })(<Input placeholder="请输入电话" />)}
+                    })(<Input placeholder="请输入您的电话" />)}
                   </Form.Item>
                   <Form.Item label="您的需求">
                     {getFieldDecorator("desc")(
-                      <TextArea rows={4} placeholder="请输入需求" />
+                      <TextArea rows={4} placeholder="请输入您的需求" />
                     )}
                   </Form.Item>
-                  <Button type="main" title="提交需求" />
+                  <Button
+                    type="main"
+                    title="提交需求"
+                    onClick={this.handleSubmit}
+                  />
                 </Form>
               </div>
               <div className="form-right">
@@ -109,7 +133,7 @@ const Contact = styled.div`
 `;
 
 const Banner = styled.div`
-  height: 520px;
+  height: 480px;
   background: url("/images/contact-banner.jpg") no-repeat;
   background-size: cover;
   background-position: center;
@@ -124,7 +148,7 @@ const Banner = styled.div`
   .banner-title {
     font-size: 68px;
     letter-spacing: 5px;
-    padding-top: 150px;
+    padding-top: 110px;
     margin-bottom: 15px;
   }
 
@@ -206,6 +230,10 @@ const ContactForm = styled.div`
 
         a {
           margin-bottom: 20px;
+        }
+
+        .ant-form-item-label {
+          display: none;
         }
       }
 

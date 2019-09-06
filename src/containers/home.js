@@ -10,12 +10,13 @@ import ShapeTitle from "../components/shape-title";
 import Button from "../components/button";
 import Card from "../components/card";
 import CaseCard from "../components/case-card";
+import { TITLE } from "../config";
 
 @withRouter
 export default class extends React.PureComponent {
   render() {
     return (
-      <DocumentTitle title="Adventure - 首页">
+      <DocumentTitle title={`首页 - ${TITLE}`}>
         <Home>
           <Banner>
             <Container>

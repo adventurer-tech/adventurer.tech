@@ -2,16 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-const Main = styled.a`
+const Main = styled.div`
   width: 150px;
   height: 42px;
   line-height: 42px;
   text-align: center;
+  cursor: pointer;
   background: ${props =>
     props.type === "yellow" ? "rgba(255, 190, 53, 1)" : "rgba(46, 73, 213, 1)"};
   color: white;
-  display: block;
-  margin: 0 auto;
+  display: inline-block;
   box-shadow: ${props =>
     props.type === "main" && "0px 6px 11px 0px rgba(46,73,213,0.2)"};
 
@@ -29,7 +29,11 @@ export default class Button extends React.PureComponent {
 
   render() {
     const { title, type } = this.props;
-    return <Main type={type}>{title}</Main>;
+    return (
+      <Main type={type} {...this.props}>
+        {title}
+      </Main>
+    );
   }
 }
 

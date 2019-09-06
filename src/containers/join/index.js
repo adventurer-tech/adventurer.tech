@@ -2,6 +2,7 @@ import React from "react";
 import DocumentTitle from "react-document-title";
 import styled from "styled-components";
 import { withRouter } from "react-router";
+import { TITLE } from "../../config";
 
 import { Container, LargeContainer } from "../../components/layout";
 
@@ -9,10 +10,17 @@ import { Container, LargeContainer } from "../../components/layout";
 export default class extends React.PureComponent {
   render() {
     return (
-      <DocumentTitle title="Adventure - 加入我们">
+      <DocumentTitle title={`加入我们 - ${TITLE}`}>
         <Join>
           <Banner>
-            <img src="/images/join-banner.jpg" alt="" />
+            <Container>
+              <div className="banner-title">
+                面朝大海，春暖花开；世界那么大，我想去看看；
+              </div>
+              <div className="banner-subtitle">
+                自由是勇敢者的权利，只有了解世界，热爱世界，才能改变世界
+              </div>
+            </Container>
           </Banner>
           <List>
             <Container>
@@ -139,11 +147,38 @@ const Join = styled.div`
 `;
 
 const Banner = styled.div`
-  img {
-    width: 100%;
+  height: 480px;
+  background: url("/images/join-banner.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+
+  .banner-subtitle {
+    font-size: 30px;
+  }
+
+  .banner-title {
+    font-size: 30px;
+    padding-top: 80px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 240px;
+
+    .banner-subtitle {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    .banner-title {
+      font-size: 18px;
+      line-height: 28px;
+      padding-top: 30px;
+    }
   }
 `;
-
 const List = styled.div`
   ul {
     padding: 0;

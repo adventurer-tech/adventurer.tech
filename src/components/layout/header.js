@@ -118,7 +118,12 @@ export default class AdventureHeader extends React.PureComponent {
 
   renderMenu = mode => {
     return (
-      <WrapMenu mode={mode}>
+      <WrapMenu
+        mode={mode}
+        onClick={() => {
+          this.closeDrawer();
+        }}
+      >
         <WrapMenu.Item>
           <NavLink to="/">首页</NavLink>
         </WrapMenu.Item>
