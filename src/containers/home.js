@@ -2,10 +2,12 @@ import React from "react";
 import DocumentTitle from "react-document-title";
 import styled from "styled-components";
 import { withRouter } from "react-router";
+import { NavLink } from "react-router-dom";
 
 import { Container, LargeContainer } from "../components/layout";
 import Title from "../components/title";
 import ShapeTitle from "../components/shape-title";
+import Button from "../components/button";
 import Card from "../components/card";
 import CaseCard from "../components/case-card";
 
@@ -257,9 +259,9 @@ export default class extends React.PureComponent {
           </Partner>
           <Demand>
             <h2>告诉我们您的需求</h2>
-            <a className="contact-btn" href="/">
-              联系我们
-            </a>
+            <NavLink to="/contact">
+              <Button title="联系我们" type="yellow" />
+            </NavLink>
           </Demand>
         </Home>
       </DocumentTitle>
@@ -269,7 +271,6 @@ export default class extends React.PureComponent {
 
 const Home = styled.div`
   width: 100%;
-  background: #f8faff;
 `;
 
 const Banner = styled.div`
@@ -570,21 +571,6 @@ const Demand = styled.div`
     font-size: 34px;
     color: white;
     margin-bottom: 25px;
-  }
-
-  .contact-btn {
-    width: 150px;
-    height: 42px;
-    line-height: 42px;
-    text-align: center;
-    background: rgba(255, 190, 53, 1);
-    color: white;
-    display: block;
-    margin: 0 auto;
-
-    &:hover {
-      background: rgba(255, 190, 53, 0.9);
-    }
   }
 
   @media screen and (max-width: 768px) {

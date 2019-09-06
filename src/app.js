@@ -10,6 +10,7 @@ import Cases from "./containers/cases";
 import Join from "./containers/join";
 import Opinion from "./containers/opinion";
 import Service from "./containers/service";
+import Contact from "./containers/contact";
 import { Layout } from "antd";
 
 import { Footer, Header, Content } from "./components/layout";
@@ -27,6 +28,7 @@ class App extends Component {
               <Route path="/join" component={Join} />
               <Route path="/opinion" component={Opinion} />
               <Route path="/service" component={Service} />
+              <Route path="/contact" component={Contact} />
               <Route path="/" component={Home} />
             </Switch>
           </Content>
