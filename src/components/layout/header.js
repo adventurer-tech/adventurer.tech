@@ -2,6 +2,7 @@ import React from "react";
 import { Menu, Icon, Drawer } from "antd";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router";
 
 import LargeContainer from "./container-large";
 
@@ -85,7 +86,8 @@ const WrapMenu = styled(Menu)`
   }
 `;
 
-export default class AdventureHeader extends React.PureComponent {
+@withRouter
+export default class extends React.PureComponent {
   state = {
     showDrawer: false,
     smallScreen: window.innerWidth <= 992,
@@ -123,23 +125,24 @@ export default class AdventureHeader extends React.PureComponent {
         onClick={() => {
           this.closeDrawer();
         }}
+        selectedKeys={[this.props.location.pathname]}
       >
-        <WrapMenu.Item>
+        <WrapMenu.Item key="/">
           <NavLink to="/">首页</NavLink>
         </WrapMenu.Item>
-        <WrapMenu.Item>
+        <WrapMenu.Item key="/service">
           <NavLink to="/service">服务</NavLink>
         </WrapMenu.Item>
-        <WrapMenu.Item>
+        <WrapMenu.Item key="/cases">
           <NavLink to="/cases">案例</NavLink>
         </WrapMenu.Item>
-        <WrapMenu.Item>
+        <WrapMenu.Item key="/opinion">
           <NavLink to="/opinion">观点</NavLink>
         </WrapMenu.Item>
-        <WrapMenu.Item>
+        <WrapMenu.Item key="/about">
           <NavLink to="/about">关于</NavLink>
         </WrapMenu.Item>
-        <WrapMenu.Item>
+        <WrapMenu.Item key="/join">
           <NavLink to="/join">加入</NavLink>
         </WrapMenu.Item>
       </WrapMenu>
