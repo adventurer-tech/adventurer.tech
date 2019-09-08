@@ -23,6 +23,7 @@ const Main = styled.div`
     height: ${props => (props.iconWidth ? props.iconWidth + "px" : "auto")};
     background: url(${props => props.icon}) no-repeat;
     background-position: center center;
+    background-size: contain;
   }
 
   .title {

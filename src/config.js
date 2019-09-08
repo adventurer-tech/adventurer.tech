@@ -35,3 +35,4 @@ export function env(name, init) {
  */
 export const STORE_BASE = env("STORE_BASE", "");
 export const TOKEN = env("TOKEN", "some fake token");
+export const TITLE = env("TITLE", "冒险者科技");
