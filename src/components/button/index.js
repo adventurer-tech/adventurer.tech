@@ -10,7 +10,7 @@ const Main = styled.div`
   cursor: pointer;
   background: ${props =>
     props.type === "yellow" ? "rgba(255, 190, 53, 1)" : "rgba(46, 73, 213, 1)"};
-  color: white;
+  color: ${props => (props.type === "yellow" ? "rgba(0, 0, 0, 1)" : "white")};
   display: inline-block;
   box-shadow: ${props =>
     props.type === "main" && "0px 6px 11px 0px rgba(46,73,213,0.2)"};
