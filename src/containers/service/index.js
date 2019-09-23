@@ -228,9 +228,9 @@ const Banner = styled.div`
     height: 240px;
     background-position: 50% 50%;
     .title {
-      width: 180px;
+      width: 200px;
       height: 28px;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 400;
       color: rgba(255, 255, 255, 1);
       line-height: 28px;
@@ -238,10 +238,9 @@ const Banner = styled.div`
 
     .sub-title {
       padding-top: 8px;
-      width: 180px;
+      width: 160px;
       height: 57px;
-      font-size: 9px;
-      font-family: PingFangSC-Regular, PingFangSC;
+      font-size: 10px;
       font-weight: 400;
       color: rgba(255, 255, 255, 1);
       line-height: 19px;
