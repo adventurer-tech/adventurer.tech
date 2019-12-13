@@ -117,7 +117,7 @@ export default class extends React.PureComponent {
                 <div className="tips-desc">
                   <p>
                     <span>了解: </span>
-                    听说过，看过相关文档，并且在自己的项目或者 playgournd
+                    听说过，看过相关文档，并且在自己的项目或者 playground
                     上试用、试玩过。
                   </p>
                   <p>
