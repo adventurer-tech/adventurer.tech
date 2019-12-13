@@ -117,7 +117,7 @@ export default class extends React.PureComponent {
                 </p>
                 <p>
                   <img src="/images/icon-email.png" alt="" />
-                  business@adventurer.tech
+                  wangjunhua@36node.com
                 </p>
               </div>
             </Container>
