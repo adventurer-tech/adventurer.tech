@@ -105,14 +105,14 @@ export default class extends React.PureComponent {
                 <h4>投递小贴士</h4>
                 <ul>
                   <li>
-                    简历请发送到<span>hr@36node.com</span>
+                    简历请发送到<span> hr@36node.com </span>
                   </li>
                   <li>
                     邮件标题格式请按照
-                    <span>{`{姓名}-{学校}-兼职{职位}`}</span>
+                    <span> {`{姓名}-{学校}-兼职{职位}`} </span>
                     另请务必附上简历附件或者邮件正文中包含在线简历地址。
                   </li>
-                  <li>为防止简历出现其一 约定如下名词解释</li>
+                  <li>为防止简历出现歧义 约定如下名词解释</li>
                 </ul>
                 <div className="tips-desc">
                   <p>
@@ -121,11 +121,11 @@ export default class extends React.PureComponent {
                     上试用、试玩过。
                   </p>
                   <p>
-                    <span>熟悉:</span>
+                    <span>熟悉: </span>
                     已经在实际项目中使用相关技术，并且积累了一定程度的经验。
                   </p>
                   <p>
-                    <span>掌握:</span>
+                    <span>掌握: </span>
                     多次使用相关技术并且跟进最新的进展，了解它和竞品的优缺点，了解它的技术架构和潜在风险。
                   </p>
                   <p>
