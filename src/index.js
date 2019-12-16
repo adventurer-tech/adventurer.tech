@@ -8,7 +8,7 @@ import "./index.css";
 import App from "./app";
 import rootSaga from "./sagas";
 import reducer from "./reducers";
-import registerServiceWorker from "./lib/registerServiceWorker";
+import { unregister } from "./lib/registerServiceWorker";
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -25,4 +25,6 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-registerServiceWorker();
+
+// unregister service worker
+unregister();
