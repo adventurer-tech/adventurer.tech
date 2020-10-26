@@ -20,7 +20,7 @@ zerotier-cli orbit 635fee4eb6 635fee4eb6
 
 # 尝试:
 
-ping 10.242.0.7
+ping 10.242.0.4
 
 # ping 通说明网络连接成功
 
